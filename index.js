@@ -1,27 +1,19 @@
+import { EOL } from 'os';
 import readline from 'readline';
 import { stdin as input, stdout as output } from 'process';
-import {getArgValue} from './helpers/parseArgs.js';
-import {sayHi, sayBye} from './helpers/niceGuy.js';
+
+import { sayHi, sayBye  } from './helpers/index.js'
+
 import { commandListener } from './commands/index.js';
-import { getCurrDir } from './helpers/path.js'
+
+import { currentState } from './state/index.js';
 
 
-/*=====================================================*/
-const currentState = {
-    userName : '',
-    currentDir: '',
-    getUserName(){
-        this.userName = getArgValue('--username')
-    },
-    getCurrentDir(){
-        this.currentDir = getCurrDir()
-    }
-}
-/*=====================================================*/
 
 
 function main(){
-    currentState.getUserName();
+    currentState.setUserName();
+    currentState.setHomeDir();
 
     const userInterface = readline.createInterface({
         input,
@@ -29,15 +21,16 @@ function main(){
     });
 
     process.stdout.write(`${sayHi(currentState.userName)}`);
-
-    console.log(getCurrDir());
+    process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
+    
 
     userInterface.on('line', (line) => {
         if(line == '.exit'){
             process.stdout.write(`${sayBye(currentState.userName)}`);
             userInterface.close()
-        }     
+        }
         commandListener(line)
+        process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
     });
 
     userInterface.on('SIGINT', () => {
