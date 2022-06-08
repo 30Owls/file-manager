@@ -2,7 +2,7 @@ import { EOL } from 'os';
 import readline from 'readline';
 import { stdin as input, stdout as output } from 'process';
 
-import { sayHi, sayBye  } from './helpers/index.js'
+import { sayHi, sayBye, cmdSlplit  } from './helpers/index.js'
 
 import { commandListener } from './commands/index.js';
 
@@ -29,7 +29,8 @@ function main(){
             process.stdout.write(`${sayBye(currentState.userName)}`);
             userInterface.close()
         }
-        commandListener(line)
+        commandListener(cmdSlplit(line))
+       //s console.log(cmdSlplit(line))
         process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
     });
 
