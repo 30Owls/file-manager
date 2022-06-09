@@ -9,6 +9,6 @@ const __dirname = dirname(__filename);
 export const command_Up = (currentDir) => {
    let newPath = path.join(currentDir, '..');
    currentState.currentDir = newPath;
-   return newPath;
+   return null;
 }
 

@@ -4,14 +4,14 @@ import { stdin as input, stdout as output } from 'process';
 
 import { sayHi, sayBye, cmdSlplit  } from './helpers/index.js'
 
-import { commandListener } from './commands/index.js';
+import { commandHandler } from './commands/index.js';
 
 import { currentState } from './state/index.js';
 
 
 
 
-function main(){
+(async  () => {
     currentState.setUserName();
     currentState.setHomeDir();
 
@@ -29,18 +29,21 @@ function main(){
             process.stdout.write(`${sayBye(currentState.userName)}`);
             userInterface.close()
         }
-        commandListener(cmdSlplit(line))
-       //s console.log(cmdSlplit(line))
-        process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
+
+        commandHandler(line)
+
+    });
+
+    userInterface.on('error', function (error) {
+        console.log(error);
+    });
+    userInterface.on('uncaughtException', function (err) {
+        console.log('Caught exception: ', err);
     });
 
     userInterface.on('SIGINT', () => {
         process.stdout.write(`${sayBye(currentState.userName)}`);
         userInterface.close();
     });
-    
-}
 
-
-
-main();
+})();
