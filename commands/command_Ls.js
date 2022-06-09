@@ -1,24 +1,22 @@
+import { EOL } from 'os';
 import {readdir} from 'node:fs/promises';
+import { currentState } from '../state/index.js';
 import  errors  from '../helpers/errors.js'
 import path from 'path';
 
 
 export const command_Ls = async (p) => {
-//   fs.readdir(path, (err, files) => {
-//        if (err) {
-//            throw new Error('Operation failed');
-//        }
-//         return files
-//    })
     const aPath = path.resolve(p);
 
     try {
         const files = await readdir(aPath);
-        return files
+        console.log(files)
+        process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
 
     } catch (err) {
+        //throw new Error(err);
         console.log(errors.errOperation)
-        // throw new Error(errors.errOperation);
+        process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
     }
    
 }

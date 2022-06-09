@@ -1,11 +1,8 @@
 import { currentState } from '../state/index.js';
+import { EOL } from 'os';
 import errors from '../helpers/errors.js'
 import fs from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import path from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export const command_Cd = (currentDir, newDir) => {
    let newPath = '';
@@ -19,9 +16,10 @@ export const command_Cd = (currentDir, newDir) => {
    
    if (fs.existsSync(newPath)) {
       currentState.currentDir = newPath;
-      return newPath;
+      process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
   } else {
       console.log(errors.errOperation);
+      process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
   }
 }
 

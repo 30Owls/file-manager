@@ -2,7 +2,7 @@ import { EOL } from 'os';
 import readline from 'readline';
 import { stdin as input, stdout as output } from 'process';
 
-import { sayHi, sayBye, cmdSlplit  } from './helpers/index.js'
+import { sayHi, sayBye  } from './helpers/index.js'
 
 import { commandHandler } from './commands/index.js';
 
@@ -37,8 +37,8 @@ import { currentState } from './state/index.js';
     userInterface.on('error', function (error) {
         console.log(error);
     });
-    userInterface.on('uncaughtException', function (err) {
-        console.log('Caught exception: ', err);
+    userInterface.on('uncaughtException', function (error) {
+        console.log(error);
     });
 
     userInterface.on('SIGINT', () => {
