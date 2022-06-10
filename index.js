@@ -17,7 +17,8 @@ import { currentState } from './state/index.js';
 
     const userInterface = readline.createInterface({
         input,
-        output
+        output,
+        prompt: ''
     });
 
     process.stdout.write(`${sayHi(currentState.userName)}`);

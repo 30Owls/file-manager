@@ -8,9 +8,12 @@ import {command_Ls} from './command_Ls.js'
 import {command_Cat} from './command_Cat.js'
 import {command_Add} from './command_Add.js'
 import { command_Rn } from './command_Rn.js';
+import { command_Cp } from './command_Cp.js';
+import { command_Mv } from './command_Mv.js';
+import { command_Rm } from './command_Rm.js';
 
 async function commandListener(input){
-  switch (input[0]) {
+  switch (input[0].toLowerCase()) {
     case ('.exit'):
       break;
     case('cat'):
@@ -31,6 +34,15 @@ async function commandListener(input){
     case ('rn'):
       command_Rn(input[1],input[2])
       break;
+    case ('cp'):
+      command_Cp(input[1],input[2])
+      break;
+    case ('mv'):
+      command_Mv(input[1],input[2])
+      break;
+    case ('rm'):
+        command_Rm(input[1])
+        break;
     default:
       console.log('Invalid input')
       process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
