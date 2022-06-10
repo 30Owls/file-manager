@@ -7,3 +7,4 @@
 [] компрессия с бротли - расширение example.txt.br
 [] process.exit или .close() ??
 [] path.join рефактор в path.resolve (см скрин на раб столе)
+[] смена директории process.chdir и брать директорию process.cwd вместо стейта

@@ -7,6 +7,7 @@ import {command_Cd} from './command_Cd.js'
 import {command_Ls} from './command_Ls.js'
 import {command_Cat} from './command_Cat.js'
 import {command_Add} from './command_Add.js'
+import { command_Rn } from './command_Rn.js';
 
 async function commandListener(input){
   switch (input[0]) {
@@ -26,6 +27,9 @@ async function commandListener(input){
       break;
     case ('add'):
       command_Add(input[1]);
+      break;
+    case ('rn'):
+      command_Rn(input[1],input[2])
       break;
     default:
       console.log('Invalid input')
