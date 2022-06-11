@@ -10,6 +10,7 @@ import { currentState } from './state/index.js';
 
 
 (async  () => {
+
     currentState.setUserName();
     currentState.setHomeDir();
 
@@ -37,13 +38,6 @@ import { currentState } from './state/index.js';
     } catch (err) {
         console.log(err.message)
     }
-
-    // userInterface.on('error', function (error) {
-    //     console.log('interface on error worked');
-    // });
-    // userInterface.on('uncaughtException', function (error) {
-    //     console.log('interface on uncaughtException worked');
-    // });
 
     userInterface.on('SIGINT', () => {
         process.stdout.write(`${EOL}${sayBye(currentState.userName)}${EOL}`);

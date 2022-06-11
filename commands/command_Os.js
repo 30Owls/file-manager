@@ -1,7 +1,6 @@
 import os from 'os';
 import { EOL } from 'os';
 import errors from '../helpers/errors.js';
-import { currentState } from '../state/index.js';
 
 
 /**

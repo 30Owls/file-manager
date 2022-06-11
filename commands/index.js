@@ -1,6 +1,5 @@
 import { currentState } from '../state/index.js';
 
-import { EOL } from 'os';
 import  errors  from '../helpers/errors.js'
 import {command_Up} from './command_Up.js'
 import {command_Cd} from './command_Cd.js'
@@ -12,6 +11,7 @@ import { command_Cp } from './command_Cp.js';
 import { command_Mv } from './command_Mv.js';
 import { command_Rm } from './command_Rm.js';
 import { command_Os } from './command_Os.js';
+import { command_Hash } from './command_Hash.js';
 
 async function commandListener(input){
   try{
@@ -48,11 +48,14 @@ async function commandListener(input){
       case ('os'):
         await command_Os(input)
         break;
+      case ('hash'):
+        await command_Hash(input[1])
+        break;
       default:
         console.log('Invalid input')
     }
   } catch (err){
-    console.log(err.message);
+    console.log(errors.errOperation);
   }
 }
 
