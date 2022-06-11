@@ -56,22 +56,6 @@ async function commandListener(input){
   }
 }
 
-/*
-  получаем команду из индекса, сплитим через smdSplit
-  чтобы получить массив [команда, аргумент(если есть)]
-  и передаем в свич-функцию commandListener
-  если ответ будет undefined, например при команде up нам ответ не нужен,
-  то просто кидаем сообщение о текущей директории
-*/
-// async function commandHandler(linecommand){
-//   let answerQ = await commandListener(cmdSlplit(linecommand));
-//   if( typeof answerQ === 'undefined' || answerQ === null ){
-//     //return process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
-//     return;
-//   }
-//   //console.log(answerQ)
-//   //return process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
-// }
 
 export {
     commandListener

@@ -29,7 +29,7 @@ import { currentState } from './state/index.js';
                 userInterface.close()
             } else {
                 await commandListener(cmdSlplit(line)).then(()=>{
-                    process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
+                    process.stdout.write(`${EOL}You are currently in ${currentState.currentDir}${EOL}`);
                 })
             }
             
@@ -38,12 +38,12 @@ import { currentState } from './state/index.js';
         console.log(err.message)
     }
 
-    userInterface.on('error', function (error) {
-        console.log('interface on error worked');
-    });
-    userInterface.on('uncaughtException', function (error) {
-        console.log('interface on uncaughtException worked');
-    });
+    // userInterface.on('error', function (error) {
+    //     console.log('interface on error worked');
+    // });
+    // userInterface.on('uncaughtException', function (error) {
+    //     console.log('interface on uncaughtException worked');
+    // });
 
     userInterface.on('SIGINT', () => {
         process.stdout.write(`${EOL}${sayBye(currentState.userName)}${EOL}`);
