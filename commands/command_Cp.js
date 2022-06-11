@@ -3,7 +3,7 @@ import {existAsync} from '../helpers/existAsync.js'
 import { currentState } from '../state/index.js';
 import  errors  from '../helpers/errors.js'
 import path from 'path';
-import { PassThrough, pipeline } from 'stream';
+import { pipeline } from 'stream';
 
 /**
  * - Copy file: 

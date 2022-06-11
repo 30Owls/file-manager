@@ -64,7 +64,7 @@ List of operations and their syntax:
     ```bash
     cp path_to_file path_to_new_directory
     ```
-    - Move file (same as copy but initial file is deleted): 
+    ++++++++++ STREAM Move file (same as copy but initial file is deleted): 
     ```bash
     mv path_to_file path_to_new_directory
     ```
