@@ -35,15 +35,15 @@ npm run start -- --username=your_username
 
 List of operations and their syntax:
 - Navigation & working directory (nwd)
-    - Go upper from current directory (when you are in the root folder this operation shouldn't change working directory)  
+    ++++++++++ Go upper from current directory (when you are in the root folder this operation shouldn't change working directory)  
     ```bash
     up
     ```
-    - Go to dedicated folder from current directory (`path_to_directory` can be relative or absolute)
+    ++++++++++ Go to dedicated folder from current directory (`path_to_directory` can be relative or absolute)
     ```bash
     cd path_to_directory
     ```
-    - List all files and folder in current directory and print it to console
+    ++++++++++ List all files and folder in current directory and print it to console
     ```bash
     ls
     ```
@@ -68,7 +68,7 @@ List of operations and their syntax:
     ```bash
     mv path_to_file path_to_new_directory
     ```
-    - Delete file: 
+    ++++++++++ Delete file: 
     ```bash
     rm path_to_file
     ```

@@ -4,7 +4,13 @@ import { currentState } from '../state/index.js';
 import  errors  from '../helpers/errors.js'
 import path from 'path';
 
-// rm path_to_file
+/**
+ * - Delete file: 
+    ```bash
+    rm path_to_file
+    ```
+ * @param {*} fileName - path_to_file
+ */
 
 export const command_Rm = async (fileName) => {
     
@@ -14,15 +20,12 @@ export const command_Rm = async (fileName) => {
         let filePath = path.resolve(currentDir, fileName);
 
         fs.unlink(filePath, function (err) {
-            // if (err) throw err;
             if(err){
                 console.log(errors.errOperation)
             }
-            process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
         });
     } catch (err){
         console.log(errors.errOperation)
-        process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
     }
 
 }
