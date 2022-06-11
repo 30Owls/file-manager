@@ -1,4 +1,3 @@
-import { EOL } from 'os';
 import fs from 'fs';
 import zlib from 'zlib';
 import { pipeline } from 'stream';

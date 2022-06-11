@@ -1,4 +1,3 @@
-import { EOL } from 'os';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { currentState } from '../state/index.js';

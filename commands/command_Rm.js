@@ -1,4 +1,3 @@
-import { EOL } from 'os';
 import fs from 'fs';
 import { currentState } from '../state/index.js';
 import  errors  from '../helpers/errors.js'
