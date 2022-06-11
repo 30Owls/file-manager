@@ -8,3 +8,4 @@
 [] process.exit или .close() ??
 [] path.join рефактор в path.resolve (см скрин на раб столе)
 [] смена директории process.chdir и брать директорию process.cwd вместо стейта
+[] FILE COPY если в ту эже директорию то приделывать_copy к названию файла

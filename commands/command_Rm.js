@@ -8,16 +8,21 @@ import path from 'path';
 
 export const command_Rm = async (fileName) => {
     
-    let currentDir = currentState.currentDir;
-    // full dir with Filename
-    let filePath = path.resolve(currentDir, fileName);
+    try {
+        let currentDir = currentState.currentDir;
+        // full dir with Filename
+        let filePath = path.resolve(currentDir, fileName);
 
-    fs.unlink(filePath, function (err) {
-        // if (err) throw err;
-        if(err){
-            console.log(errors.errOperation)
-        }
+        fs.unlink(filePath, function (err) {
+            // if (err) throw err;
+            if(err){
+                console.log(errors.errOperation)
+            }
+            process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
+        });
+    } catch (err){
+        console.log(errors.errOperation)
         process.stdout.write(`You are currently in ${currentState.currentDir}${EOL}`);
-    });
+    }
 
 }

@@ -48,19 +48,19 @@ List of operations and their syntax:
     ls
     ```
 - Basic operations with files
-    - Read file and print it's content in console: 
+    ++++++++++ STREAM  Read file and print it's content in console: 
     ```bash
     cat path_to_file
     ```
-    - Create empty file in current working directory: 
+    ++++++++++ STREAM Create empty file in current working directory: 
     ```bash
     add new_file_name
     ```
-    - Rename file: 
+    ++++++++++ STREAM Rename file: 
     ```bash
     rn path_to_file new_filename
     ```
-    - Copy file: 
+    ++++++++++ STREAM Copy file: 
     ```bash
     cp path_to_file path_to_new_directory
     ```
