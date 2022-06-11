@@ -93,17 +93,17 @@ List of operations and their syntax:
     ```bash
     os --architecture
     ```
-- Hash calculation  
+++++++++++ STREAM Hash calculation  
     - Calculate hash for file and print it into console  
     ```bash
     hash path_to_file
     ```
 - Compress and decompress operations  
-    - Compress file (using Brotli algorytm)  
+++++++++++ STREAM Compress file (using Brotli algorytm)  
     ```bash
     compress path_to_file path_to_destination
     ```
-    - Decompress file (using Brotli algorytm)  
+++++++++++ STREAM Decompress file (using Brotli algorytm)  
     ```bash
     decompress path_to_file path_to_destination
     ```

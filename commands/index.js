@@ -12,6 +12,8 @@ import { command_Mv } from './command_Mv.js';
 import { command_Rm } from './command_Rm.js';
 import { command_Os } from './command_Os.js';
 import { command_Hash } from './command_Hash.js';
+import { command_Compress } from './command_Compress.js';
+import { command_Decompress } from './command_Decompress.js';
 
 async function commandListener(input){
   try{
@@ -50,6 +52,12 @@ async function commandListener(input){
         break;
       case ('hash'):
         await command_Hash(input[1])
+        break;
+      case ('compress'):
+        await command_Compress(input[1], input[2])
+        break;
+      case ('decompress'):
+        await command_Decompress(input[1], input[2])
         break;
       default:
         console.log('Invalid input')
