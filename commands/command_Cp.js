@@ -27,7 +27,7 @@ export const command_Cp = async (pathToFile, cpPath) => {
             let oldFile = path.basename(fileToCopy);
             // get new dir with filename
             let newFile = path.resolve(currentDir , cpPath, oldFile);
-            console.log(fileToCopy, oldFile, newFile)
+            
 
             let oldFExist = await existAsync(fileToCopy);
             if(oldFExist){
