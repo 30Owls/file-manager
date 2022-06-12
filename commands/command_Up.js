@@ -1,14 +1,21 @@
 import { currentState } from '../state/index.js';
-
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import path from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+/**
+ * - Go upper from current directory (when you are in the root folder this operation shouldn't change working directory)  
+    ```bash
+    up
+    ```
+ * @param {*} currentDir - current directory
+ */
+
 
 export const command_Up = (currentDir) => {
-   let newPath = path.join(currentDir, '..');
-   currentState.currentDir = newPath;
-   return newPath;
+   try{
+      let newPath = path.resolve(currentDir, '..');
+      currentState.currentDir = newPath;
+   } catch (err) {
+      throw new Error(errors.errOperation)
+   }
 }
 
